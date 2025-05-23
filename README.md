@@ -1,9 +1,5 @@
 # dataMetrics
 
-C mini project for the Coding Lab exam @di.unipi
-
-## Description
-
 **dataMetrics** is a simple C project created for the Coding Lab exam at the Department of Computer Science, University of Pisa (di.unipi). The project demonstrates fundamental C programming concepts, focusing on file handling and basic data metric computations.
 
 ## Features
