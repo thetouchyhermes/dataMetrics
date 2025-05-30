@@ -45,7 +45,7 @@ Follow the prompts in the terminal to use the application.
 ## Project Structure
 
 - `main.c` — Main source code file
-- `Makefile` — (If present) For automated building
+- `Makefile` — For automated building
 
 ## License
 
