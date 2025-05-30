@@ -1,47 +1,78 @@
 # dataMetrics
 
-**dataMetrics** is a simple C project created for the Coding Lab exam at the Department of Computer Science, University of Pisa (di.unipi). The project demonstrates fundamental C programming concepts, focusing on file handling and basic data metric computations.
+**dataMetrics** is a simple C project created for the Laboratorio2 exam at the Department of Computer Science, University of Pisa (di.unipi.it). The project demonstrates fundamental C programming concepts, focusing on file handling and basic data metric computations.
 
-## Features
+## Overview
 
-- Written in C for educational purposes
-- Demonstrates file input/output and data processing techniques
-- Modular code for easy understanding and extension
+This program analyzes all `.dat` files in a specified directory (and its subdirectories) to calculate:
+- The number of numeric values in each file
+- The average of these values
+- The standard deviation of these values
 
-## Getting Started
+The application uses a multi-threaded approach with a master-collector architecture:
+- The master process searches for `.dat` files and manages the worker threads
+- Worker threads process individual files and send results to the collector
+- The collector aggregates and displays the results
 
-### Prerequisites
+## Requirements
 
-- GCC or any C99-compliant compiler
-- Git (for cloning the repository)
+- Linux/Unix sistem (POSIX-compliant)
+- Packages:
+   - GCC
+   - Make
+   - Git
+- Required libraries:
+  - pthread
+  - math
 
-### Setup
+## Setup
 
 1. **Clone the repository:**
    ```sh
    git clone https://github.com/thetouchyhermes/dataMetrics.git
+   ```
+   ```sh
    cd dataMetrics
    ```
-
-2. **Compile the code:**
+   
+2. **Install/check installation of `GCC` and `make` packages**
+   ```sh
+   sudo apt update
+   ```
+   ```sh
+   sudo apt install build-essential
+   ```
+   
+3. **Compile the code:**
    ```sh
    make
    ```
-
-3. **Run the program:**
-   ```sh
-   ./dataMetrics
-   ```
-
+   
 ## Usage
 
-Follow the prompts in the terminal to use the application.  
-(You can expand this section with examples or command-line arguments if your program supports any.)
+Run the program with the following format:
+ ```sh
+./main <directory> <W>
+```
+where:
+- `<directory>`: The directory to scan for `.dat` files (including subdirectories)
+- `<W>`: The number of worker threads to use for processing files
+
+Example:
+```sh
+./main ./check 5
+```
 
 ## Project Structure
 
 - `main.c` — Main source code file
 - `Makefile` — For automated building
+- `testo.pdf` — Project manual and instructions
+- `\check` — Test files directory
+- `unboundedqueue.c` `unboundedqueue.h` — Prof-provided implementation of the queue data structure
+- `sysmacro.h` — Project-related system macros referenced in main
+- `util.h` — Project-related utility functions
+- `README.md` — this file
 
 ## License
 
