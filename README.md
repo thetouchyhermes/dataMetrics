@@ -25,10 +25,6 @@
 
 2. **Compile the code:**
    ```sh
-   gcc -o dataMetrics main.c
-   ```
-   _or, if a Makefile is provided:_
-   ```sh
    make
    ```
 
